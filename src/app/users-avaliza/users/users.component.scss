@@ -1,0 +1,23 @@
+@import '../../../assets/scss/layout/variables';
+
+:host ::ng-deep .p-datatable .p-datatable-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: $bg-primary;
+    color: #fff;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0.3rem;
+}
+
+:host ::ng-deep .p-button.p-button-add{
+    border-radius: 2px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    min-width: 100%;
+
+    .p-button-label{
+        font: normal normal bold 14px/25px Open Sans;
+    }
+}
