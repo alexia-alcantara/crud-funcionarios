@@ -1,0 +1,21 @@
+:host ::ng-deep {
+    .p-inputnumber-input, .p-inputnumber , .p-inputwrapper, .p-inputtext{
+        width: 100%;
+        border-radius: 4px;
+        height: 2.5rem;
+    }
+    
+}
+
+// :host ::ng-deep .p-dialog .p-dialog-footer {
+//     .p-confirm-dialog-reject{
+//         background-color: transparent;
+//         color: #ef4444;
+//         border: 1px solid;
+//     }
+//     .p-confirm-dialog-accept{
+//         background: #16a34a;
+//         color: #ffffff;
+//         border-color: #16a34a;
+//     }
+// }

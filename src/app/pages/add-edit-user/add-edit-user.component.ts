@@ -47,11 +47,11 @@ export class AddEditUserComponent implements OnInit, OnChanges{
 
   ngOnChanges():void{
     if(this.selectedUser) {
-      this.modalType = 'Edit';
+      this.modalType = 'Editar';
       this.userForm.patchValue(this.selectedUser);
     } else{
       this.userForm.reset();
-      this.modalType = 'Add';
+      this.modalType = 'Adicionar';
     }
   }
 
@@ -71,10 +71,10 @@ export class AddEditUserComponent implements OnInit, OnChanges{
         this.clickAddEdit.emit(res);
         this.closeModal();
         const msg = this.modalType == 'Add' ? 'User Added' : 'User updated';
-        this.messageService.add({severity:'success', summary:'Success', detail: msg});
+        this.messageService.add({severity:'danger', summary:'Success', detail: msg});
       },
       error: (err) =>{
-        this.messageService.add({severity:'error', summary: 'Error', detail: err});
+        this.messageService.add({severity:'success', summary: 'Error', detail: err});
         console.log('error occured');
       }
     })
