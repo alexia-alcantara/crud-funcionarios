@@ -11,9 +11,39 @@
     border-radius: 0.3rem;
 }
 
-:host ::ng-deep .p-button.p-button-add{
-    border-radius: 2px;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    min-width: 100%;
+:host ::ng-deep .p-button{
+
+    &:focus{
+        box-shadow: none;
+    }
+    .p-button-add{
+        border-radius: 2px;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        min-width: 100%;
+    }
 }
+
+
+
+:host ::ng-deep .p-dialog {
+    .p-confirm-dialog-icon{
+        color: #ffcc33;
+    }
+
+    .p-dialog-footer{
+        .p-confirm-dialog-reject{
+            background-color: #fff;
+            color: #ee1616;
+            border-color: #ee1616;
+        }
+    
+        .p-confirm-dialog-accept{
+            background: #008d34f0;
+            border-color: #008d34f0;
+            color: #fff;
+            opacity: 1;
+        } 
+    }
+}
+        

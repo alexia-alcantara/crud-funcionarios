@@ -86,9 +86,11 @@ export class UsersComponent implements OnInit, OnDestroy {
 
   deleteUser(users: Users){
     this.confirmationService.confirm({
-      message: 'Are you sure that you want to delete this user?',
+      message: 'Tem certeza em deleter esse usuário?',
       header: 'Delete',
       icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Sim',
+      rejectLabel: 'Não',
       accept: () => {
         this.userService.deleteUser(users.id).subscribe({
           next: (res) =>{
@@ -98,7 +100,7 @@ export class UsersComponent implements OnInit, OnDestroy {
           },
           error: (err) =>{
             this.messageService.add({severity:'error', summary:'Error', detail: err});
-          }
+          },
         })
       }
   });

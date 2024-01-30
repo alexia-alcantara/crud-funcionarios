@@ -1,0 +1,16 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Luke Skywalker",
+        "email": "luke_skywalker@email.com",
+        "gender": "M"
+      },
+      {
+        "id": 2,
+        "name": "Leia Organa",
+        "email": "leia@example.com",
+        "gender": "F"
+      }
+    ]
+  }
