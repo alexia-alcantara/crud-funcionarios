@@ -3,12 +3,15 @@ import { Component, EventEmitter, Input, Output, OnChanges, OnInit } from '@angu
 
 // PrimeNg
 import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { UserService } from '../../service/users.service';
 import { MessageService } from 'primeng/api';
+import { HttpClient } from '@angular/common/http';
+import { error } from 'console';
 
 @Component({
   selector: 'app-add-edit-user',
@@ -18,7 +21,8 @@ import { MessageService } from 'primeng/api';
     ButtonModule,
     ReactiveFormsModule,
     InputTextModule,
-    InputNumberModule
+    InputNumberModule,
+    DropdownModule
   ],
   templateUrl: './add-edit-user.component.html',
   styleUrl: './add-edit-user.component.scss'
@@ -30,19 +34,33 @@ export class AddEditUserComponent implements OnInit, OnChanges{
   @Output() clickClose: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() clickAddEdit: EventEmitter<any> = new EventEmitter<any>();
   modalType = "Add";
+  typeUser: any [] = [];
 
   userForm = this.fb.group({
-    title: ["", Validators.required],
-    category: ["", Validators.required],
+    name: ["", Validators.required],
+    email: ["", Validators.required],
+    typeUser: ["", Validators.required]
   })
   
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private messageService: MessageService){}
+    private messageService: MessageService,
+    private http: HttpClient){}
 
   ngOnInit():void{
+    this.fetchDataFromApi();
+  }
 
+  fetchDataFromApi(){
+    this.http.get<any[]>('http://localhost:3000/users').subscribe({
+      next: (res) => {
+        this.typeUser = res;
+      },
+      error: (err) => {
+        console.log('Erro ao buscar dados da Api', err);
+      }
+    })
   }
 
   ngOnChanges():void{

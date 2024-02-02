@@ -11,7 +11,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<Users[]>{
-    return this.http.get<Users[]>('https://fakestoreapi.com/products?sort=desc');
+    return this.http.get<Users[]>('http://localhost:3000/users');
   }
 
   // saveUser(postData: any){
@@ -20,13 +20,13 @@ export class UserService {
 
   addEditUser(postData: any, selectedUsr: any){
     if(!selectedUsr){
-      return this.http.post('https://fakestoreapi.com/products', postData);
+      return this.http.post('http://localhost:3000/users', postData);
     } else { 
-      return this.http.put(`https://fakestoreapi.com/products/${selectedUsr.id}`, postData);
+      return this.http.put(`http://localhost:3000/users/${selectedUsr.id}`, postData);
     }
   }
 
   deleteUser(userId: number){
-    return this.http.delete(`https://fakestoreapi.com/products/${userId}`)
+    return this.http.delete(`http://localhost:3000/users/${userId}`)
   }
 }

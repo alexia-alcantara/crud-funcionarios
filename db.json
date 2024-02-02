@@ -1,16 +1,34 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "Luke Skywalker",
-        "email": "luke_skywalker@email.com",
-        "gender": "M"
-      },
-      {
-        "id": 2,
-        "name": "Leia Organa",
-        "email": "leia@example.com",
-        "gender": "F"
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": "2",
+      "name": "Leia Organa",
+      "email": "leia@example.com",
+      "typeUser": "Avaliza Financeiro"
+    },
+    {
+      "id": "3",
+      "name": "Leia Organa",
+      "email": "leia@example.com",
+      "typeUser": "Avaliza Inadimplência"
+    },
+    {
+      "name": "Bianca",
+      "email": "admin@avaliza.com",
+      "typeUser": "Avaliza ADM",
+      "id": "ac91"
+    },
+    {
+      "name": "Filipe",
+      "email": "admin@avaliza.com",
+      "typeUser": "Avaliza Financeiro",
+      "id": "789"
+    },
+    {
+      "name": "Gabriel",
+      "email": "admin@avaliza.com",
+      "typeUser": "Avaliza Financeiro",
+      "id": "98"
+    }
+  ]
+}

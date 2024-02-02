@@ -14,15 +14,15 @@
             <tr>
                 <th>Id</th>
                 <th>Nome</th>
-                <th>Categoria</th>
+                <th>Tipo de usuário</th>
                 <th></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-user>
             <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.title }}</td>
-                <td>{{ user.category }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.typeUser }}</td>
                 <td>
                     <p-button [rounded]="true" icon="pi pi-pencil"
                      severity="success" (click)="showEditModal(user)"></p-button>
